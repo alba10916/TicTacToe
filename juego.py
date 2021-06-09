@@ -26,4 +26,5 @@ class Juego:
             self.turno += 1
             jugada = jugador.elegimos(self.tablero.jugadasLibres())
             self.tablero.introducirJugada(jugador, jugada)
-        print('el juego ha terminado')    
+            self.tablero.comprobarVictoria(jugador)
+        print('\n Habeis empatado, otra vez sera.....')    

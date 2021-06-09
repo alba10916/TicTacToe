@@ -4,7 +4,7 @@ from jugador import Jugador
 
 class Juego:
     DURACION = 9
-    FICHA = ['X', 'Y']
+    FICHA = ['X', 'O']
 
     def __init__(self):
         self.tablero = Tablero()
@@ -13,17 +13,17 @@ class Juego:
 
     def reset(self):
         self.jugador = [
-            Jugador(self.FICHA[0]),
-            Jugador(self.FICHA[1])
-        ]
+            Jugador(self.FICHA[0], -1),
+            Jugador(self.FICHA[1], 1)
+         ]
         self.tablero.reset()
         self.turno = 0
 
     def juega(self):
-        self.tablero.dibujo()
+        self.tablero.dibuja()
         while self.turno < self.DURACION:
-            
-
-            jugada = jugador.elegir(jugadasLibres)
+            jugador = self.jugador[self.turno % 2]
             self.turno += 1
-            # self.tablero.dibuja()
+            jugada = jugador.elegimos(self.tablero.jugadasLibres())
+            self.tablero.introducirJugada(jugador, jugada)
+        print('el juego ha terminado')    

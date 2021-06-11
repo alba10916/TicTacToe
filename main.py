@@ -1,3 +1,4 @@
 from juego import Juego
 
-Juego()
+while True:
+    Juego()

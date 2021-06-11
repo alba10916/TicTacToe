@@ -1,5 +1,6 @@
 from tablero import Tablero
 from jugador import Jugador
+from mensajes import mensajes
 
 
 class Juego:
@@ -27,4 +28,4 @@ class Juego:
             jugada = jugador.elegimos(self.tablero.jugadasLibres())
             self.tablero.introducirJugada(jugador, jugada)
             self.tablero.comprobarVictoria(jugador)
-        print('\n Habeis empatado, otra vez sera.....')    
+        print(mensajes["empate"])

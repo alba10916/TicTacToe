@@ -1,3 +1,6 @@
+from mensajes import mensajes
+
+
 class Jugador:
 
     def __init__(self, ficha, code):
@@ -6,19 +9,16 @@ class Jugador:
 
     def elegimos(self, posibilidades):
 
-        # posibilidades = self.posibilidades
         jugada = None
-        # jugada = int(input(f'El jugador {self.ficha} elige una posicion posible de { posibilidades }:'))        
-        # print(f'El jugador{self.ficha} elige esta posicion{posibilidades}')
         while jugada not in posibilidades:
             first = True
             if not first:
                 print('segunda partida')
             first = False
-            jugada = input(f'El jugador {self.ficha} elige una posicion posible del {posibilidades}:')
+            jugada = input(mensajes["elegir"])
             try:
                 jugada = int(jugada)
             except ValueError:
-                print("Error, elija un numero incluido en la lista")
+                print(mensajes["error"])
 
         return jugada

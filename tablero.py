@@ -1,3 +1,6 @@
+from mensajes import mensajes
+
+
 class Tablero:
     posibilidades = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -5,23 +8,16 @@ class Tablero:
         self.reset()
 
     def reset(self):
-        self.jugadas = [
-            ' ', ' ', ' ',
-            ' ', ' ', ' ',
-            ' ', ' ', ' '
-        ]
-        self.valorNumerico = [
-            0, 0, 0,
-            0, 0, 0,
-            0, 0, 0
-        ]
+        print()
+        self.jugadas = mensajes["jugadas"]
+        self.valorNumerico = mensajes["valorNumerico"]
         self.posibilidades = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     def dibuja(self):
         print('-------------')
-        print(f' {self.jugadas[0]} |  {self.jugadas[1]} | {self.jugadas[2]}\n')
+        print(f' {self.jugadas[6]} |  {self.jugadas[7]} | {self.jugadas[8]}\n')
         print(f' {self.jugadas[3]} |  {self.jugadas[4]} | {self.jugadas[5]}\n')
-        print(f' {self.jugadas[6]} |  {self.jugadas[7]} | {self.jugadas[8]}')
+        print(f' {self.jugadas[0]} |  {self.jugadas[1]} | {self.jugadas[2]}')
         print('-------------')
 
     def jugadasLibres(self):
@@ -33,6 +29,7 @@ class Tablero:
         self.valorNumerico[jugada-1] = jugador.code
         self.posibilidades.remove(jugada)
         self.dibuja()
+
     def comprobarVictoria(self, jugador):
         diagonal1 = self.valorNumerico[0] + self.valorNumerico[4] + self.valorNumerico[8]
         diagonal2 = self.valorNumerico[2] + self.valorNumerico[4] + self.valorNumerico[6]
@@ -42,28 +39,27 @@ class Tablero:
         fila1 = self.valorNumerico[0] + self.valorNumerico[1] + self.valorNumerico[2]
         fila2 = self.valorNumerico[3] + self.valorNumerico[4] + self.valorNumerico[5]
         fila3 = self.valorNumerico[6] + self.valorNumerico[7] + self.valorNumerico[8]
-       
         if diagonal1 == 3 or diagonal1 == (-3):
-            print(f'\nEl jugador {jugador.ficha} ha ganado la partida!!')
+            print(mensajes["ganar"]).format(**{jugador.ficha})
             exit()
-        if diagonal2 == 3 or diagonal1 == (-3):
-            print(f'\nEl jugador {jugador.ficha} ha ganado la partida!!')
+        if diagonal2 == 3 or diagonal2 == (-3):
+            print(mensajes["ganar"]).format(**{jugador.ficha})           
             exit()
-        if columna1 == 3 or diagonal1 == (-3):
-            print(f'\nEl jugador {jugador.ficha} ha ganado la partida!!')
+        if columna1 == 3 or columna1 == (-3):
+            print(mensajes["ganar"]).format(**{jugador.ficha})
             exit()
-        if columna2 == 3 or diagonal1 == (-3):
-            print(f'\nEl jugador {jugador.ficha} ha ganado la partida!!')
+        if columna2 == 3 or columna2 == (-3):
+            print(mensajes["ganar"]).format(**{jugador.ficha})
             exit()
-        if columna3 == 3 or diagonal1 == (-3):
-            print(f'\nEl jugador {jugador.ficha} ha ganado la partida!!')
+        if columna3 == 3 or columna3 == (-3):
+            print(mensajes["ganar"]).format(**{jugador.ficha})
             exit()
-        if fila1 == 3 or diagonal1 == (-3):
-            print(f'\nEl jugador {jugador.ficha} ha ganado la partida!!')
+        if fila1 == 3 or fila1 == (-3):
+            print(mensajes["ganar"]).format(**{jugador.ficha})
             exit()
-        if fila1 == 3 or diagonal1 == (-3):
-            print(f'\nEl jugador {jugador.ficha} ha ganado la partida!!')
+        if fila2 == 3 or fila2 == (-3):
+            print(mensajes["ganar"]).format(**{jugador.ficha})
             exit()
-        if fila1 == 3 or diagonal1 == (-3):
-            print(f'\nEl jugador {jugador.ficha} ha ganado la partida!!')
+        if fila3 == 3 or fila3 == (-3):
+            print(mensajes["ganar"]).format(**{jugador.ficha})
             exit()

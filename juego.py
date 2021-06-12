@@ -21,6 +21,7 @@ class Juego:
         self.turno = 0
 
     def juega(self):
+        print(mensajes["comienzo"])
         self.tablero.dibuja()
         while self.turno < self.DURACION:
             jugador = self.jugador[self.turno % 2]

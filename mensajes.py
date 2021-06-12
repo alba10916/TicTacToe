@@ -1,10 +1,11 @@
 
 mensajes = {
-    "ganar": "\nEl jugador   {jugador.ficha} GANAAAAA!!",
-    "elegir": "El jugador {self.ficha} elige una posicion posible del {posibilidades}:",
+
+    "comienzo": "\n--------{{QUE COMIENCE EL JUEGO}}---------\n",
+    "ganar": "\nEl jugador   {ficha}    GANAAAAA!!",
     "error": "Error, elija un numero incluido en la lista",
-    "empate": "\n ------------------EMPATE----------------- \n -----------------PRUEBA OTRA VEZ--------------\n",
-    "jugadas":[
+    "empate": "\n ------------------EMPATE----------------- \n -----------------PROBEMOS OTRA VEZ--------------\n",
+    "jugadas": [
             ' ', ' ', ' ',
             ' ', ' ', ' ',
             ' ', ' ', ' '
@@ -14,5 +15,4 @@ mensajes = {
             0, 0, 0,
             0, 0, 0
         ]
-    
 }

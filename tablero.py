@@ -8,7 +8,6 @@ class Tablero:
         self.reset()
 
     def reset(self):
-        print()
         self.jugadas = mensajes["jugadas"]
         self.valorNumerico = mensajes["valorNumerico"]
         self.posibilidades = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -39,27 +38,29 @@ class Tablero:
         fila1 = self.valorNumerico[0] + self.valorNumerico[1] + self.valorNumerico[2]
         fila2 = self.valorNumerico[3] + self.valorNumerico[4] + self.valorNumerico[5]
         fila3 = self.valorNumerico[6] + self.valorNumerico[7] + self.valorNumerico[8]
+        msg = {"ficha": jugador.ficha}
+        ganar = mensajes["ganar"].format(**msg)
         if diagonal1 == 3 or diagonal1 == (-3):
-            print(mensajes["ganar"]).format(**{jugador.ficha})
+            print(ganar)
             exit()
         if diagonal2 == 3 or diagonal2 == (-3):
-            print(mensajes["ganar"]).format(**{jugador.ficha})           
+            print(ganar)
             exit()
         if columna1 == 3 or columna1 == (-3):
-            print(mensajes["ganar"]).format(**{jugador.ficha})
+            print(ganar)
             exit()
         if columna2 == 3 or columna2 == (-3):
-            print(mensajes["ganar"]).format(**{jugador.ficha})
+            print(ganar)
             exit()
         if columna3 == 3 or columna3 == (-3):
-            print(mensajes["ganar"]).format(**{jugador.ficha})
+            print(ganar)
             exit()
         if fila1 == 3 or fila1 == (-3):
-            print(mensajes["ganar"]).format(**{jugador.ficha})
+            print(ganar)
             exit()
         if fila2 == 3 or fila2 == (-3):
-            print(mensajes["ganar"]).format(**{jugador.ficha})
+            print(ganar)
             exit()
         if fila3 == 3 or fila3 == (-3):
-            print(mensajes["ganar"]).format(**{jugador.ficha})
+            print(ganar)
             exit()
